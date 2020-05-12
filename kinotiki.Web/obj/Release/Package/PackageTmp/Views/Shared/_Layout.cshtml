@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>@ViewBag.Title</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jquery-validate")
+    @Scripts.Render("~/bundles/jquery-cookie")
+    @Scripts.Render("~/bundles/popper")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Styles.Render("~/Content/css")
+
+</head>
+<body>
+    <div class="body-wrapper">
+        <div class="header">
+            <div class="navigation-bar">
+                <div class="logo">
+                    <a href="#" class="logo">AC.PR<i class="fa fa-circle"></i>GER();</a>
+                </div>
+                <div class="navigation-menu">
+                    <ul>
+                        <li class="menu-btn">
+                            <a href="#">Back-End</a>
+                            <ul>
+                                <li class="menu-btn"><a href="#">C#</a></li>
+                                <li class="menu-btn"><a href="#">PHP</a></li>
+                                <li class="menu-btn"><a href="#">MVC</a></li>
+                                <li class="menu-btn"><a href="#">WebForms</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-btn">
+                            <a href="#">Front-End</a>
+                            <ul>
+                                <li class="menu-btn"><a href="#">JavaScript</a></li>
+                                <li class="menu-btn"><a href="#">HTML/CSS</a></li>
+                                <li class="menu-btn"><a href="#">Bootstrap</a></li>
+                                <li class="menu-btn"><a href="#">JQuery</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-btn">
+                            <a href="#">Android</a>
+                            <ul>
+                                <li class="menu-btn"><a href="#">C#</a></li>
+                                <li class="menu-btn"><a href="#">Java</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-btn">
+                            <a href="#">Desktop</a>
+                            <ul>
+                                <li class="menu-btn"><a href="#">C++</a></li>
+                                <li class="menu-btn"><a href="#">Python</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-btn">
+                            <a href="#">GameDev</a>
+                            <ul>
+                                <li class="menu-btn"><a href="#">Unity</a></li>
+                                <li class="menu-btn"><a href="#">UnrealEngine</a></li>
+                                <li class="menu-btn"><a href="#">C++/SFML</a></li>
+                                <li class="menu-btn"><a href="#">C++/OpenGL</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="body-container">
+            <div class="content">
+                @RenderBody()
+            </div>
+            <div class="side-menu">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-item">
+            <p>mrcactuscore@gmail.com</p>
+        </div>
+        <div class="footer-item social-links">
+            <a href="#" class="fa fa-facebook social-link"></a>
+            <a href="#" class="fa fa-google social-link"></a>
+            <a href="#" class="fa fa-twitter social-link"></a>
+            <a href="#" class="fa fa-youtube social-link"></a>
+        </div>
+        <div class="footer-item">
+            <a href="#">Help us</a>
+        </div>
+    </div>
+</body>
+</html>

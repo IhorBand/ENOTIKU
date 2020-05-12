@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@*
+    TODO:
+        Show Movies
+@Html.Action("GetAllHeaderPosts", "Post", new { pageSize = ViewBag.SizeOfPosts, pageNum = ViewBag.CurPageNum })
+
+*@

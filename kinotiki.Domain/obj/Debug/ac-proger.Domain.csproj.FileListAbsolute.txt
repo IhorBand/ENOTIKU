@@ -1,0 +1,68 @@
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\ac-proger.Domain.dll.config
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\ac-proger.Domain.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\ac-proger.Domain.pdb
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\EntityFramework.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\Ninject.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.Helpers.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.Mvc.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.Razor.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.WebPages.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\EntityFramework.xml
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\Ninject.xml
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.Helpers.xml
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.Mvc.xml
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.Razor.xml
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.WebPages.xml
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\ru\System.Web.Helpers.resources.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\ru\System.Web.Mvc.resources.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\ru\System.Web.Razor.resources.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\ru\System.Web.WebPages.resources.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\ru\System.Web.WebPages.Deployment.resources.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\bin\Debug\ru\System.Web.WebPages.Razor.resources.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\obj\Debug\ac-proger.Domain.dll
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\obj\Debug\ac-proger.Domain.pdb
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\obj\Debug\ac_proger.Domain.Migrations.AddImageToUser.resources
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\obj\Debug\ac-proger.Domain.csproj.GenerateResource.Cache
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\obj\Debug\ac-proger.Domain.csprojAssemblyReference.cache
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\obj\Debug\ac-proger.Domain.csproj.CoreCompileInputs.cache
+E:\Programming\ASP NET Projects\ac-proger\ac-proger.Domain\obj\Debug\ac-proger.Domain.csproj.CopyComplete
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\ac-proger.Domain.dll.config
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\ac-proger.Domain.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\ac-proger.Domain.pdb
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\EntityFramework.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\EntityFramework.SqlServer.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\Ninject.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.Helpers.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.Mvc.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.Razor.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.WebPages.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.WebPages.Razor.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\EntityFramework.xml
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\EntityFramework.SqlServer.xml
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\Ninject.xml
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.Helpers.xml
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.Mvc.xml
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.Razor.xml
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.WebPages.xml
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\System.Web.WebPages.Razor.xml
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\ru\System.Web.Helpers.resources.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\ru\System.Web.Mvc.resources.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\ru\System.Web.Razor.resources.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\ru\System.Web.WebPages.resources.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\ru\System.Web.WebPages.Deployment.resources.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\bin\Debug\ru\System.Web.WebPages.Razor.resources.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\obj\Debug\ac-proger.Domain.csprojResolveAssemblyReference.cache
+E:\HomeDev\kinotiki\ac-proger.Domain\obj\Debug\ac_proger.Domain.Migrations.AddImageToUser.resources
+E:\HomeDev\kinotiki\ac-proger.Domain\obj\Debug\ac-proger.Domain.csproj.GenerateResource.Cache
+E:\HomeDev\kinotiki\ac-proger.Domain\obj\Debug\ac-proger.Domain.dll
+E:\HomeDev\kinotiki\ac-proger.Domain\obj\Debug\ac-proger.Domain.pdb

@@ -1,0 +1,16 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	padding: 0;
+	color: #a8a8a8;
+}
+
+a,
+a:hover {
+	text-decoration: none;
+	color: #a8a8a8;
+}
