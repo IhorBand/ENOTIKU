@@ -12,11 +12,9 @@
 </div>
 <div class="user-interface" >
     <p>Hello <span class="user-login">@Model.login</span> ! <br />
-    This is your mail: <span class="user-login">@Model.email</span> <br />
-    And ur age: <span class="user-login">@Model.age</span> <br /><p>
 
     <div class="user-buttons">
-        <a class="btn btn-primary btn-sm" href="@Url.Action("EditAccount","Account")">
+        <a class="btn btn-primary btn-sm" href="@Url.Action("EditAccount","Account")" style="margin-right:20px;">
             Edit
         </a>
 

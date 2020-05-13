@@ -21,7 +21,9 @@ namespace kinotiki.Domain.Entity
 
         public string email { get; set; }
         public int sex { get; set; }
-        public int age { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime Birthday { get; set; }
 
         public int role { get; set; }
 

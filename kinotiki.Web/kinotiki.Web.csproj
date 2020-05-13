@@ -199,6 +199,7 @@
     </Compile>
     <Compile Include="Helpers\AuthHelper.cs" />
     <Compile Include="Helpers\WebHelper.cs" />
+    <Compile Include="Infrastructure\AutoMapperProfile.cs" />
     <Compile Include="Infrastructure\NinjectRegistrations.cs" />
     <Compile Include="Models\Account\LoginUser.cs" />
     <Compile Include="Models\Account\RegisterUser.cs" />

@@ -15,5 +15,10 @@ namespace kinotiki.Domain.Concrete
 
         public DbSet<User> Users { get; set; }
         public DbSet<GlobalSettings> GlobalSettings { get; set; }
+        
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Properties<User>().Configure(c => c.HasColumnType("datetime2"));
+        //}
     }
 }

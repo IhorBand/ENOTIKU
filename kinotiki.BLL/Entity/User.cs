@@ -15,7 +15,6 @@ namespace kinotiki.BLL.Entity
         public string password { get; set; }
 
         public string email { get; set; }
-        public int age { get; set; }
 
         public GenderType sex { get; set; }
 
@@ -23,5 +22,7 @@ namespace kinotiki.BLL.Entity
 
         public byte[] imageData { get; set; }
         public string imageMimeType { get; set; }
+
+        public DateTime Birthday { get; set; }
     }
 }

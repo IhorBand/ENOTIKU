@@ -35,6 +35,7 @@ namespace kinotiki.Web.Infrastructure
             {
                 // Add all profiles in current assembly
                 cfg.AddProfile(new BLL.Infrastructure.AutoMapperProfile());
+                cfg.AddProfile(new AutoMapperProfile());
             });
 
             return config;

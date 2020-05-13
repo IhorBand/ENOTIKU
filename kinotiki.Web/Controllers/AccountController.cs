@@ -6,16 +6,20 @@ using System.Web.Mvc;
 using kinotiki.Domain.Entity;
 using kinotiki.BLL.Abstract;
 using System.Web.Security;
+using AutoMapper;
 
 namespace kinotiki.Web.Controllers
 {
     public class AccountController : Controller
     {
         private IUserService userService;
+        private IMapper mapper;
 
-        public AccountController(IUserService userService)
+        public AccountController(IUserService userService, 
+            IMapper mapper)
         {
             this.userService = userService;
+            this.mapper = mapper;
         }
 
         public ActionResult Register()
@@ -44,17 +48,11 @@ namespace kinotiki.Web.Controllers
 
                 model.password = Helpers.AuthHelper.EncodePassword(model.password);
 
-                userService.Create(new BLL.Entity.User
-                {
-                    login = model.login,
-                    password = model.password,
-                    email = model.email,
-                    age = model.age,
-                    sex = (BLL.Entity.Enums.GenderType)model.sex,
-                    role = BLL.Entity.Enums.RoleType.User,
-                    imageMimeType = model.imageMimeType,
-                    imageData = model.imageData
-                });
+                var userModel = mapper.Map<BLL.Entity.User>(model);
+
+                userModel.role = BLL.Entity.Enums.RoleType.User;
+
+                userService.Create(userModel);
 
                 if (userService.Find(model.login) != null)
                 {
@@ -106,12 +104,13 @@ namespace kinotiki.Web.Controllers
         {
             var user = userService.Find(User.Identity.Name);
             user.password = Helpers.AuthHelper.DecodePassword(user.password);
-            return View(user);
+            var registerUserModel = mapper.Map<Models.Account.RegisterUser>(user);
+            return View(registerUserModel);
         }
 
         [HttpPost]
         [Authorize]
-        public ActionResult EditAccount(BLL.Entity.User user, HttpPostedFileBase image)
+        public ActionResult EditAccount(Models.Account.RegisterUser user, HttpPostedFileBase image)
         {
             if(ModelState.IsValid)
             {
@@ -133,7 +132,13 @@ namespace kinotiki.Web.Controllers
 
                 user.password = Helpers.AuthHelper.EncodePassword(user.password);
 
-                if (userService.Update(user))
+                var _userModel = userService.Find(user.login);
+
+                var userModel = mapper.Map<BLL.Entity.User>(user);
+                userModel.id = _userModel.id;
+                userModel.role = _userModel.role;
+
+                if (userService.Update(userModel))
                 {
                     FormsAuthentication.SetAuthCookie(user.login, true);
                     return RedirectToAction("Index", "Home");

@@ -38,12 +38,12 @@ namespace kinotiki.BLL.Infrastructure
                         new BLL.Entity.User
                         {
                             id = m.id,
-                            age = m.age,
                             email = m.email,
                             imageData = m.imageData,
-                            imageMimeType =m.imageMimeType,
+                            imageMimeType = m.imageMimeType,
                             login = m.login,
-                            password = m.password
+                            password = m.password,
+                            Birthday = m.Birthday
                         }
                     )
                 )

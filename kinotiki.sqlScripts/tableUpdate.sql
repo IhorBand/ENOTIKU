@@ -44,3 +44,13 @@ GO
 USE [kinotikiMainDb]
 --INSERT INTO Global_Settings(smtpIP,smtpPort,smtpMail,smtpPassword) VALUES ('smtp.gmail.com',587,'igor.bandura.3@gmail.com','************') --! Attention Add Real Password before using
 GO
+
+
+-- ihorB
+USE [kinotikiMainDb]
+ALTER TABLE [Users] DROP COLUMN [age]
+GO
+
+USE [kinotikiMainDb]
+ALTER TABLE [Users] ADD [Birthday] DATETIME2 NOT NULL DEFAULT(GETDATE())
+GO
