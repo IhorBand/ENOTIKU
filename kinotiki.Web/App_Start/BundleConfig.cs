@@ -35,8 +35,11 @@ namespace kinotiki.Web
                       "~/Content/bootstrap.min.css",
                       "~/Content/styles/fontAwesome/css/font-awesome.min.css",
                       "~/Content/styles/social-buttons/social-buttons.css",
-                      "~/Content/styles/reset.css",
-                      "~/Content/styles/main.css"));
+                      "~/Content/styles/reset.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css/main").Include("~/Content/styles/main.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Styles/login").Include("~/Content/Styles/login.css"));
         }
     }
 }

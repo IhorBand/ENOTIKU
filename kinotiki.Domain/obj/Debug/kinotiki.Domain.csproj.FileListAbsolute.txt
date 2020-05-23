@@ -65,3 +65,4 @@ E:\HomeDev\kinotiki\kinotiki.Domain\obj\Debug\kinotiki.Domain.Migrations.AddImag
 E:\HomeDev\kinotiki\kinotiki.Domain\obj\Debug\kinotiki.Domain.csproj.GenerateResource.Cache
 E:\HomeDev\kinotiki\kinotiki.Domain\obj\Debug\kinotiki.Domain.dll
 E:\HomeDev\kinotiki\kinotiki.Domain\obj\Debug\kinotiki.Domain.pdb
+E:\HomeDev\kinotiki\kinotiki.Domain\obj\Debug\kinotiki.Domain.csprojResolveAssemblyReference.cache

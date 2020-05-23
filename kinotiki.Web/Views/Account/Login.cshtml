@@ -2,38 +2,52 @@
 
 @{ 
     ViewBag.Title = "Log-in";
+    Layout = "~/Views/Shared/_LayoutEmpty.cshtml";
+}
+
+@section headContent {
+    @Styles.Render("~/Content/Styles/login")    
 }
     
 @using (Html.BeginForm("Login","Account",FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4 class="text-center">Log-in</h4>
-        <div id="alert" class="text-center">
-            @Html.ValidationMessage("WrongLogin", htmlAttributes: new { @style = "color:red;" })
-        </div>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.login, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.login, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.login, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    
-        <div class="form-group">
-            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
-                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-            </div>
-        </div>
-    
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Log-in" class="btn btn-dark" />
+    <div class="logo">
+        <span>K</span>
+        <span>I</span>
+        <span>N</span>
+        <span>O</span>
+        <span>T</span>
+        <span>I</span>
+        <span>K</span>
+        <span>I</span>
+    </div>
+    <div class="container-fluid">
+    </div>
+    <div class="modal-dialog text-center">
+        <div class="col-sm-12 main-section">
+            <div class="modal-content">
+                <div class="col-12 user-img">
+                    <img src="~/Content/Images/user.jpg">
+                </div>
+                <div class="col-12 form-input">
+                    <div id="alert" class="text-center">
+                        @Html.ValidationMessage("WrongLogin", htmlAttributes: new { @style = "color:red;" })
+                    </div>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.login, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Your Login" } })
+                    </div>
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Your Password", @type = "password" } })
+                    </div>
+                    <input type="submit" value="Log-in" class="btn btn-success" />
+                </div>
+                <div class="col-12 about">
+                    <a href="#">More about us</a>
+                </div>
             </div>
         </div>
     </div>

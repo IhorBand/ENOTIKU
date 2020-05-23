@@ -217,7 +217,9 @@
     <Content Include="Content\Images\a.png" />
     <Content Include="Content\Images\b.png" />
     <Content Include="Content\Images\c.jpeg" />
+    <Content Include="Content\Images\Promo.jpg" />
     <Content Include="Content\Images\rainbow_sort.jpg" />
+    <Content Include="Content\Images\user.jpg" />
     <Content Include="Content\Images\Users\defaultAlienImg.png" />
     <Content Include="Content\Images\Users\defaultFemaleImg.jpg" />
     <Content Include="Content\Images\Users\defaultMaleImg.png" />
@@ -227,6 +229,7 @@
     <Content Include="Content\Styles\fontAwesome\css\font-awesome.min.css" />
     <Content Include="Content\Styles\fontAwesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Styles\fontAwesome\HELP-US-OUT.txt" />
+    <Content Include="Content\Styles\login.css" />
     <Content Include="Content\Styles\main.css" />
     <Content Include="Content\Styles\reset.css" />
     <Content Include="Content\Styles\social-buttons\images\a.png" />
@@ -377,9 +380,11 @@
     <Content Include="Views\Shared\GetInformationSideMenuBox.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\EditAccount.cshtml" />
+    <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Common\Images\" />
     <Folder Include="Common\Scripts\Home\" />
     <Folder Include="Content\Styles\images\" />
     <Folder Include="Scripts\main\" />
