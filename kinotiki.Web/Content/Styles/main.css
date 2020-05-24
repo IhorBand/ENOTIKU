@@ -105,6 +105,8 @@ a.logo:hover {
 	-ms-flex-direction: row;
 	    flex-direction: row;
 	background-color: #f2f2f2;
+    min-height:100vh;
+    padding-bottom: 25px;
 }
 
 .content {
@@ -289,7 +291,7 @@ a.btn-primary, input.btn-primary {
     width: 100%;
     height: auto;
     overflow:hidden;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
 }
 
 .footer-item {
@@ -300,9 +302,13 @@ a.btn-primary, input.btn-primary {
     color: #a8a8a8;
 }
 
+.footer-item p, .footer-item a {
+    color: #d6d6d6;
+}
+
 .footer-item a {
 	text-decoration: none;
-	color: #a8a8a8;
+	/*color: #a8a8a8;*/
 }
 
 .social-links {
