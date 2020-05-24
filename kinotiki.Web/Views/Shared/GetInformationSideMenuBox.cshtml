@@ -1,5 +1,7 @@
 ﻿@model kinotiki.BLL.Entity.User
 
+@if (Model != null)
+{
 <div class="user-image">
     @if (Model.imageData == null)
     {
@@ -14,13 +16,13 @@
     <p>Hello <span class="user-login">@Model.login</span> ! <br />
 
     <div class="user-buttons">
-        <a class="btn btn-primary btn-sm" href="@Url.Action("EditAccount","Account")" style="margin-right:20px;">
+        <a class="btn btn-primary btn-sm" href="@Url.Action("EditAccount", "Account")" style="margin-right:20px;">
             Edit
         </a>
 
-        <a class="btn btn-primary btn-sm" href="@Url.Action("Logout","Account")">
+        <a class="btn btn-primary btn-sm" href="@Url.Action("Logout", "Account")">
             Log-out
         </a>
     </div>
 </div>
-
+}

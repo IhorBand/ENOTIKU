@@ -38,11 +38,11 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.BirthdayDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <label for="example-date-input" class="col-md-2 control-label">Date</label>
+            @*<label for="example-date-input" class="col-md-2 control-label">Date</label>*@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BirthdayDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                 @Html.ValidationMessageFor(model => model.BirthdayDate, "", new { @class = "text-danger" })
-                <input class="form-control" type="date" value="2020-08-19" id="example-date-input">
+                @*<input class="form-control" type="date" value="2020-08-19" id="example-date-input">*@
             </div>
         </div>
 

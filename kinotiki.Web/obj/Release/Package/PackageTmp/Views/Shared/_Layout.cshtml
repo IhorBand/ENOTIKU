@@ -15,76 +15,57 @@
     @Scripts.Render("~/bundles/bootstrap")
 
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/css/main")
 
+    @RenderSection("headContent", false)
 </head>
 <body>
     <div class="body-wrapper">
-        <div class="header">
+        <div class="header text-for-black-background">
             <div class="navigation-bar">
                 <div class="logo">
-                    <a href="#" class="logo">AC.PR<i class="fa fa-circle"></i>GER();</a>
+                    <a href="@Url.Action("Index", "Home")" class="logo">KIN<i class="fa fa-circle"></i>TIKI</a>
                 </div>
-                <div class="navigation-menu">
+                @*<div class="navigation-menu">
                     <ul>
                         <li class="menu-btn">
-                            <a href="#">Back-End</a>
+                            <a href="#">Movies</a>
                             <ul>
-                                <li class="menu-btn"><a href="#">C#</a></li>
-                                <li class="menu-btn"><a href="#">PHP</a></li>
-                                <li class="menu-btn"><a href="#">MVC</a></li>
-                                <li class="menu-btn"><a href="#">WebForms</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-btn">
-                            <a href="#">Front-End</a>
-                            <ul>
-                                <li class="menu-btn"><a href="#">JavaScript</a></li>
-                                <li class="menu-btn"><a href="#">HTML/CSS</a></li>
-                                <li class="menu-btn"><a href="#">Bootstrap</a></li>
-                                <li class="menu-btn"><a href="#">JQuery</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-btn">
-                            <a href="#">Android</a>
-                            <ul>
-                                <li class="menu-btn"><a href="#">C#</a></li>
-                                <li class="menu-btn"><a href="#">Java</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-btn">
-                            <a href="#">Desktop</a>
-                            <ul>
-                                <li class="menu-btn"><a href="#">C++</a></li>
-                                <li class="menu-btn"><a href="#">Python</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-btn">
-                            <a href="#">GameDev</a>
-                            <ul>
-                                <li class="menu-btn"><a href="#">Unity</a></li>
-                                <li class="menu-btn"><a href="#">UnrealEngine</a></li>
-                                <li class="menu-btn"><a href="#">C++/SFML</a></li>
-                                <li class="menu-btn"><a href="#">C++/OpenGL</a></li>
+                                <li class="menu-btn"><a href="#">Action</a></li>
+                                <li class="menu-btn"><a href="#">Comedy</a></li>
                             </ul>
                         </li>
                     </ul>
-                </div>
+                </div>*@
             </div>
         </div>
 
         <div class="body-container">
             <div class="content">
-                @RenderBody()
+                    @RenderBody()
             </div>
             <div class="side-menu">
-                
+                <div class="box-menu box-large">
+                    <div class="box-account-content">
+                        @{ 
+                            if (User.Identity.IsAuthenticated)
+                            {
+                                Html.RenderAction("GetInformationSideMenuBox", "Account");
+                            }
+                            else
+                            {
+                                Html.RenderAction("LoginPartial", "Account");
+                            }
+                        }
+                    </div>    
+                </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
         <div class="footer-item">
-            <p>mrcactuscore@gmail.com</p>
+            <p>igor.bandura.3@gmail.com</p>
         </div>
         <div class="footer-item social-links">
             <a href="#" class="fa fa-facebook social-link"></a>

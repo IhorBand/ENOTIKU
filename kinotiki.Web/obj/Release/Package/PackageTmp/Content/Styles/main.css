@@ -109,6 +109,7 @@ a.logo:hover {
 
 .content {
 	width: 70%;
+    margin: 25px 10px 0 10px;
 }
 
 .post-container {
@@ -124,10 +125,13 @@ a.logo:hover {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
         justify-content: center;
+    max-width: 1024px;
+    margin: auto;
 }
 
 .post {
 	width: 250px;
+    height: 100%;
 	margin: 25px 10px 0px 10px;
 	-webkit-transition: all 0.4s ease-out;
 	-moz-transition: all 0.4s ease-out;
@@ -151,6 +155,7 @@ a.logo:hover {
 .post-image {
 	width: 100%;
 	height: auto;
+    max-height: 75px;
 }
 
 .post-header,
@@ -162,15 +167,48 @@ a.logo:hover {
 	text-align: center;
 }
 
+.no-posts span {
+    color: #a10000;
+    font-size: 28pt;
+    font-weight: bold;
+}
+
+.pagination-menu-cur-page {
+    font-size: 18px;
+    font-weight:bold;
+    color: red;
+}
+
+.post-pagination {
+    text-align:center;
+    margin-top: 20px;
+}
+.post-pagination a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #2B2B2B;
+}
+
+.pagination-menu-back-page img {
+    width: 25px;
+    height: 25px;
+}
+
+.pagination-menu-next-page img {
+    width:25px;
+    height: 25px;
+}
+
 .side-menu {
-	width: 30%;
+    width: 30%;
 }	
 
 .box-menu {
 	margin: 25px 10px 0px 10px;	
 	/*margin: 5px 5px 45px 5px;*/
 	background-color: #3b3b3b;
-	padding-bottom: 10px;
+	/*padding-bottom: 10px;*/
+    padding: 10px;
 }
 
 .box-head {
@@ -181,6 +219,55 @@ a.logo:hover {
 .box-content {
 	overflow-wrap: break-word;
 	margin: 5px 10px 10px 10px;
+}
+
+.box-account-content {
+    display: flex;
+    
+    flex-direction: row;
+
+}
+
+.user-image {
+    width: 100px;
+}
+
+.user-interface-user-image {
+    min-height: 64px;
+    min-width: 64px;
+}
+
+.user-interface {
+    overflow-wrap: break-word;
+    padding-left: 10px;
+    color: #838383;
+}
+
+.user-interface * {
+    color: #B1B1B1;
+}
+
+a.btn-primary, input.btn-primary {
+    color: #fff;
+}
+
+.user-login {
+    color: palegreen;
+}
+
+.user-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.log-in-form-box {
+    width:100%;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
 }
 
 .footer {
@@ -210,6 +297,7 @@ a.logo:hover {
 	width: 285px;
 	text-align: center;
 	overflow-wrap: break-word;
+    color: #a8a8a8;
 }
 
 .footer-item a {
@@ -273,6 +361,10 @@ a.fa-youtube {
 
 .social-links a:last-child {
 	margin-right: 0;
+}
+
+.text-for-black-background * {
+    color: #B1B1B1;
 }
 
 @media all and (max-width: 968px) {
