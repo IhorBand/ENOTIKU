@@ -12,7 +12,10 @@
 @using (Html.BeginForm("Login","Account",FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
-
+    
+    <div class="black-bacground">
+    </div>
+    
     <div class="logo">
         <span>K</span>
         <span>I</span>
@@ -23,8 +26,7 @@
         <span>K</span>
         <span>I</span>
     </div>
-    <div class="black-bacground">
-    </div>
+    
     <div class="container-fluid main-content">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="modal-dialog text-center login-main-section">

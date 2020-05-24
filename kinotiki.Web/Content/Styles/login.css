@@ -14,9 +14,9 @@ body {
     position: absolute;
     top: 5vh;
     left: 5%;
-    width: 350px;
+    /*width: 350px;
     height: 150px;
-    z-index: 1000;
+    z-index: 1000;*/
 }
 .logo > span {
     color:rgb(219, 219, 25);
@@ -58,7 +58,7 @@ body {
     font-weight: bolder;
 }
 .black-bacground {
-    position: absolute;
+    position: fixed;
     top:0;
     left:0;
     background-color: rgb(26, 25, 25);
@@ -66,7 +66,7 @@ body {
     height: 100vh;
     min-height: 500px;
     opacity: 0.5;
-    z-index: 0;
+    z-index: -1;
 }
 .main-content {
     height: 100vh;
@@ -148,6 +148,14 @@ body {
 }
 
 @media (max-width: 767.98px) {
+    .logo {
+        position: unset;
+        top: 0;
+        left: 0;
+        text-align: center;
+        margin-top: 30px;
+    }
+
     .login-main-section {
         min-width: 100%;
     }
