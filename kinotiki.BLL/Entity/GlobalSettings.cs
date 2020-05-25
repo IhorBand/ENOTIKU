@@ -13,5 +13,6 @@ namespace kinotiki.BLL.Entity
         public int smtpPort { get; set; }
         public string smtpMail { get; set; }
         public string smtpPassword { get; set; }
+        public string MovieDBKey { get; set; }
     }
 }

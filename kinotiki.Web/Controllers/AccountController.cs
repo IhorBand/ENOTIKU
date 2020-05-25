@@ -82,6 +82,8 @@ namespace kinotiki.Web.Controllers
                 model.password = Helpers.AuthHelper.EncodePassword(model.password);
                 if (userService.Find(model.login, model.password) != null)
                 {
+                    if(User != null && User.Identity != null && User.Identity.IsAuthenticated)
+                        FormsAuthentication.SignOut();
                     FormsAuthentication.SetAuthCookie(model.login, true);
                     return RedirectToAction("Index", "Home");
                 }

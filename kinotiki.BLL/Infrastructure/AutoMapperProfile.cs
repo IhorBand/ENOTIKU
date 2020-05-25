@@ -24,7 +24,8 @@ namespace kinotiki.BLL.Infrastructure
                             smtpIP = m.smtpIP,
                             smtpMail = m.smtpMail,
                             smtpPassword = m.smtpPassword,
-                            smtpPort = m.smtpPort
+                            smtpPort = m.smtpPort,
+                            MovieDBKey = m.MovieDBKey
                         }
                     )
                 );

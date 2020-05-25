@@ -12,6 +12,7 @@ using Ninject;
 
 namespace kinotiki.Web.Infrastructure
 {
+    /* No more in use */
     public class NinjectRegistrations : NinjectModule
     {
         public override void Load()

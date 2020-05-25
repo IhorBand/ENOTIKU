@@ -54,3 +54,15 @@ GO
 USE [kinotikiMainDb]
 ALTER TABLE [Users] ADD [Birthday] DATETIME2 NOT NULL DEFAULT(GETDATE())
 GO
+
+--ihorB
+use [kinotikiMainDb]
+ALTER TABLE [Global_Settings] ADD [movieDBKey] VARCHAR(100) NULL
+GO
+
+UPDATE Global_Settings SET movieDBKey = 'e02e113c1e8d086578caa870a138b65a';
+GO
+
+use [kinotikiMainDb]
+ALTER TABLE [Global_Settings] ADD [id] INT NOT NULL IDENTITY(1,1)
+GO

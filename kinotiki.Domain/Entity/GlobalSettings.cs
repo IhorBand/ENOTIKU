@@ -20,5 +20,8 @@ namespace kinotiki.Domain.Entity
         public int smtpPort { get; set; }
         public string smtpMail { get; set; }
         public string smtpPassword { get; set; }
+
+        [Column("movieDBKey")]
+        public string MovieDBKey { get; set; }
     }
 }

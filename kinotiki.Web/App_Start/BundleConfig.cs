@@ -29,6 +29,8 @@ namespace kinotiki.Web
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/respond.js"));
 
+            bundles.Add(new ScriptBundle("~/budles/scripts/moviedbhelper").Include("~/Content/Scripts/Helpers/TheMovieDbHelper.js"));
+
             // Styles
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
