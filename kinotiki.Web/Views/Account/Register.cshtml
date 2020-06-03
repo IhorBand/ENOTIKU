@@ -2,78 +2,107 @@
 
 @{
     ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
+
+@section headContent {
+    @Styles.Render("~/Content/Styles/login")
+}
+
+<style>
+    * {
+        color: white;
+    }
+
+    .main-content {
+        min-height: 750px;
+    }
+
+
+    h3, h4 {
+	    color: rgb(219, 219, 25);
+    }
+    .form-group input.register-submit {
+        width: 40%;
+        margin: 5px 0 25px;
+        padding: 0;
+    }
+    .register-submit {
+        color: rgb(43, 38, 38);
+        background-color: rgb(219, 219, 25);
+        font-size: 20px;
+        border-radius: 5px;
+        border: 1px solid #daf1ff;
+    }
+    .register-submit:hover {
+        background-color: rgb(121, 121, 7);
+        border: 1px solid #daf1ff;
+        color: white;
+    }
+
+</style>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4 class="text-center">Register</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.login, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.login, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.login, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="container-fluid main-content">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="modal-dialog text-center login-main-section">
+                <div class="col-sm-12 main-section">
+                    <div class="modal-content">
+                        <div class="col-12" style="margin-top: 10px; margin-bottom: 10px;">
+                            <h3>Registration</h3>
+                            <h4>Fill in the fields</h4>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.login, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Login" } })
+                            @Html.ValidationMessageFor(model => model.login, "", new { @class = "text-danger" })
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Password" } })
+                            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Email" } })
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.BirthdayDate, htmlAttributes: new { @class = "control-label col-md-2" })
-            @*<label for="example-date-input" class="col-md-2 control-label">Date</label>*@
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.BirthdayDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
-                @Html.ValidationMessageFor(model => model.BirthdayDate, "", new { @class = "text-danger" })
-                @*<input class="form-control" type="date" value="2020-08-19" id="example-date-input">*@
-            </div>
-        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.BirthdayDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                            @Html.ValidationMessageFor(model => model.BirthdayDate, "", new { @class = "text-danger" })
+                        </div>
 
-        <div class="form-group">
-            Sex:
-            <div class="col-md-10">
-                @Html.RadioButtonFor(m => m.sex, (int)kinotiki.BLL.Entity.Enums.GenderType.Male) Male
-                @Html.RadioButtonFor(m => m.sex, (int)kinotiki.BLL.Entity.Enums.GenderType.Female) Female
-                @Html.RadioButtonFor(m => m.sex, (int)kinotiki.BLL.Entity.Enums.GenderType.Alien, new { @checked = true }) Alien
-            </div>
-        </div>
-  
-        <div class="form-group">
-            Image:   
-            <div class="col-md-10">       
-                <div>
-                    Upload new image:       
-                    <input type="file" name="Image" accept="image/*" />
-                </div>   
-            </div> 
-        </div>
+                        <div class="d-flex justify-content-center align-content-center" style="margin-bottom: 25px;">
+                            <div style="margin-right: 10px;">
+                                Gender:
+                            </div>
+                            <div class="">
+                                
+                                @Html.RadioButtonFor(m => m.sex, (int)kinotiki.BLL.Entity.Enums.GenderType.Male) Male
+                                @Html.RadioButtonFor(m => m.sex, (int)kinotiki.BLL.Entity.Enums.GenderType.Female) Female
+                                @Html.RadioButtonFor(m => m.sex, (int)kinotiki.BLL.Entity.Enums.GenderType.Alien, new { @checked = true }) Alien
+                            </div>
+                        </div>
 
+                        <div class="form-group">
+                            Upload your image:
+                            <div class="col-sm-12">
+                                <input type="file" name="Image" accept="image/*" />
+                            </div>
+                        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Register" class="btn btn-sm btn-dark"  id="register-submit-btn" />
+                        <div class="form-group">
+                            <div class="col-sm-offset-2">
+                                <input type="submit" value="Register" class="register-submit" id="register-submit-btn" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-}
-
-@section headContent{
-    <scipt src="~/Common/Scripts/Account/Register.js"></scipt>
 }

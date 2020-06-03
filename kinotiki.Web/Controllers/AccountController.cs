@@ -48,8 +48,18 @@ namespace kinotiki.Web.Controllers
 
                 model.password = Helpers.AuthHelper.EncodePassword(model.password);
 
-                var userModel = mapper.Map<BLL.Entity.User>(model);
-
+                //need to check AutoMapper
+                //var userModel = mapper.Map<BLL.Entity.User>(model);
+                var userModel = new BLL.Entity.User()
+                {
+                    login = model.login,
+                    email = model.email,
+                    password = model.password,
+                    sex = (BLL.Entity.Enums.GenderType)model.sex,
+                    imageData = model.imageData,
+                    imageMimeType = model.imageMimeType,
+                    Birthday = new DateTime(model.BirthdayYear, model.BirthdayMonth, model.BirthdayDay)
+                };
                 userModel.role = BLL.Entity.Enums.RoleType.User;
 
                 userService.Create(userModel);

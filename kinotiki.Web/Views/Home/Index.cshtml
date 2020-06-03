@@ -22,6 +22,141 @@
 </div>
 
 <script>
+
+    let theMovieDbHelper = new TheMovieDbHelper();
+
+
+    /*
+    new design
+    */
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+
+    /* Movie In The Top */
+    //TODO: Need To write logic to insert movie in html
+    function getRandomMovieFromTop() {
+        theMovieDbHelper.GetTrendingAllWeek(
+            function (data) {
+                if (data != null && data.results != null && data.results.length != null && data.results.length > 0) {
+                    var index = getRandomInt(0,data.results.length);
+                    let movie = data.results[index];
+                    if (movie != null) {
+                        renderRandomTopMovie(movie);
+                    }
+                }
+            },
+            function (error) {
+                console.log(error);
+            }
+        );
+    }
+
+    function renderRandomTopMovie(movie) {
+
+    }
+
+
+    /* Now Playing */
+    //TODO: Need To write logic to insert movie in html
+    function GetNowPlayingMovies() {
+        theMovieDbHelper.GetNowPlaying(null,
+            function (data) {
+                if (data != null && data.results != null && data.results.length != null && data.results.length > 0) {
+                    RenderNowPlayingMovies(data.results);
+                }
+            },
+            function (error) {
+                console.log(error);
+            }
+        );
+    }
+
+    function RenderNowPlayingMovies(movies) {
+
+    }
+
+
+    /*Trailers*/
+    function GetTopRatedMovies() {
+        theMovieDbHelper.GetTopRatedMovies(null,
+            function (data) {
+                if (data != null && data.results != null && data.results.length != null && data.results.length > 0) {
+                    let topRatedMovies = data.results;
+                    GetVideosForMovies(topRatedMovies);
+                }
+            },
+            function (error) {
+                console.log(error);
+            }
+        );
+    }
+
+    function GetVideosForMovies(movies) {
+        for (let i = 0; i < movies.length; i++) {
+            var _movie = movies[i];
+            theMovieDbHelper.GetMovieVideos(movie.id, null,
+                function (data) {
+                    if (data != null && data.results != null && data.results.length != null && data.results.length > 0) {
+                        let trailer = GetTrailer(data.results);
+                        if (trailer != null) {
+                            addMovieTrailerToContainer(_movie, trailer);
+                        }
+                    }
+                },
+                function (error) {
+                    console.log(error);
+                }
+            );
+        }
+    }
+
+    function GetTrailer(movieVideos) {
+        let trailer = null;
+        for (let i = 0; i < movieVideos.length; i++) {
+            let video = movieVideos[i];
+            if (video != null && video.type != null && video.type.toLowerCase() == "trailer") {
+                trailer = video;
+                break;
+            }
+        }
+        if (video == null)
+            video = movieVideos[0];
+        return video;
+    }
+
+    function addMovieTrailerToContainer(movie, trailer) {
+
+    }
+
+    /* old functionality */
+    jQuery(document).ready(function () {
+        theMovieDbHelper.GetTrendingAllWeek(
+            function (data) {
+                let wrapper = jQuery('.trending');
+                let movieContainer = jQuery('<div />');
+                movieContainer.addClass('trend');
+                wrapper.append(movieContainer);
+                if(data != null && data.results != null && data.results.length != null) {
+                    for (let i = 0; i < data.results.length; i++) {
+                        let movie = data.results[i];
+                        if (movie != null) {
+                            let movieName = movie.title != undefined && movie.title != null ? movie.title : movie.name;
+                            let movieID = movie.id;
+                            movieContainer.append('<li><a onclick="showMovie(\''+movieName+'\', '+movieID+');" title="Click for more info">'+movieName+'</a></li>');
+                        }
+                    }
+                }
+            },
+            function (error) {
+            }
+        );
+    });
+    
     const basicURL = "https://api.themoviedb.org/3/",
     api_key = "?api_key=e02e113c1e8d086578caa870a138b65a",
     moviesByKeyword = "search/movie",
@@ -30,25 +165,6 @@
     poster_path = "http://image.tmdb.org/t/p/original",
     recomendation = `/recommendations`,
     lang_ending = `&language=en-US`;
-
-    document.addEventListener("DOMContentLoaded", () => {
-        let url = `${basicURL}${trending}${api_key}`;
-        fetch(url)
-        .then((result) => {
-            return result.json();
-        })
-        .then((data) => {
-            let wrapper = document.querySelector(".trending"),
-                ol = document.createElement("ol");
-            ol.classList.add("trend");
-            wrapper.append(ol);
-
-            data.results.forEach((element, index, array) => {
-                let movieName = element.title != undefined ? element.title : element.name, movieID = element.id;
-                ol.insertAdjacentHTML("beforeend", `<li><a onclick="showMovie('${movieName}', '${movieID}');" title="Click for more info">${movieName}</a></li>`);
-            });
-        })
-    });
 
     let showMovie = (name, id) => {
         let wrapper = document.querySelector(".wrapper");

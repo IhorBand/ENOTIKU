@@ -42,7 +42,8 @@ namespace kinotiki.Web.Infrastructure
                             imageMimeType = m.imageMimeType,
                             login = m.login,
                             password = m.password,
-                            sex = (BLL.Entity.Enums.GenderType)m.sex
+                            sex = (BLL.Entity.Enums.GenderType)m.sex,
+                            role = BLL.Entity.Enums.RoleType.User
                         }
                     )
                 )

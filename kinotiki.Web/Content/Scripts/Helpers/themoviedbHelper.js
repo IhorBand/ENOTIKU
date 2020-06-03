@@ -6,12 +6,15 @@ let theMovieDbHelper = new TheMovieDbHelper({
 });
 */
 
+/* TODO: */
+// Need to move it to Backend(C#) in the future
 function TheMovieDbHelper(initialValues)
 {
     var self = this;
     // Init Properties
     self.apiKey = null;
     self.apiBaseUrl = "https://api.themoviedb.org/3/";
+    self.defaultLanguage = "en-US";
 
     // Load Properties From Params
     for(var key in initialValues) {
@@ -21,9 +24,11 @@ function TheMovieDbHelper(initialValues)
     }
 
     // Init Properties
-    self.curUrl = self.apiBaseUrl;
 
 
+    //TODO: 
+    // Remove it !!!
+    // Move All MovieDB API calls to BackEnd
     if (self.apiKey == null) {
         $.ajax(
             "/api/settings/moviedb/key",
@@ -54,21 +59,70 @@ function TheMovieDbHelper(initialValues)
         }
         return "";
     }
-    
-    this.GetTrendingAllWeek = function (callback) {
+
+    this.ExecCustomMethod = function (apiUrl, type, callback, errorCallback) {
         $.ajax(
             self.GetAPIUrl("trending/all/week"),
             {
-                type: 'GET',
+                type: type,
                 async: true,
                 success: function (data) {
                     if (callback != null) {
                         callback(data);
                     }
                 },
-                error: function () {
+                error: function (error) {
                     console.log("error while getting trending movies");
+                    if (errorCallback != null)
+                        errorCallback(errorCallback);
                 }
-            });
+            }
+        );
+    }
+    
+    this.GetTrendingAllWeek = function (callback, errorCallback) {
+        self.ExecCustomMethod(self.GetAPIUrl("trending/all/week"), 'GET', callback, errorCallback);
+    }
+
+    this.GetMovie = function (movieId, language, callback, errorCallback) {
+        if (language == null) {
+            language = self.defaultLanguage;
+        }
+        self.ExecCustomMethod(self.GetAPIUrl("movie/" + movieId + "?language=" + language), 'GET', callback, errorCallback);
+    }
+
+    this.SearchMovies = function (query, language, callback, errorCallback) {
+        if (language == null) {
+            language = self.defaultLanguage;
+        }
+        self.ExecCustomMethod(self.GetAPIUrl("search/movie?query=" + encodeURIComponent(query) + "&language=" + language), 'GET', callback, errorCallback);
+    }
+
+    this.GetRecomendations = function(movieId, language, callback, errorCallback) {
+        if (language == null) {
+            language = self.defaultLanguage;
+        }
+        self.ExecCustomMethod(self.GetAPIUrl("movie/" + movieId + "/recommendations?language=" + language), 'GET', callback, errorCallback);
+    }
+
+    this.GetNowPlaying = function (language, callback, errorCallback) {
+        if (language == null) {
+            language = self.defaultLanguage;
+        }
+        self.ExecCustomMethod(self.GetAPIUrl("/movie/now_playing?language=" + language), 'GET', callback, errorCallback);
+    }
+
+    this.GetMovieVideos = function (movieId, language, callback, errorCallback) {
+        if (language == null) {
+            language = self.defaultLanguage;
+        }
+        self.ExecCustomMethod(self.GetAPIUrl("/movie/" + movieId + "/videos?language=" + language), 'GET', callback, errorCallback);
+    }
+
+    this.GetTopRatedMovies = function (language, callback, errorCallback) {
+        if (language == null) {
+            language = self.defaultLanguage;
+        }
+        self.ExecCustomMethod(self.GetAPIUrl("/movie/top_rated?language=" + language), 'GET', callback, errorCallback);
     }
 }
