@@ -66,3 +66,18 @@ GO
 use [kinotikiMainDb]
 ALTER TABLE [Global_Settings] ADD [id] INT NOT NULL IDENTITY(1,1)
 GO
+
+-- ihorB
+use [kinotikiMainDb]
+ALTER TABLE [Users] ADD [isDarkTheme] BIT NOT NULL DEFAULT(1)
+GO
+
+use [kinotikiMainDb]
+ALTER TABLE [Users] ADD [verificationKey] [VARCHAR](250) NULL
+GO
+
+use [kinotikiMainDb]
+ALTER TABLE [Users] ADD [isEmailVerificated] BIT NOT NULL DEFAULT(0)
+GO
+
+

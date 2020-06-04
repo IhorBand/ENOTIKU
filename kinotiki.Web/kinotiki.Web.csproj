@@ -220,6 +220,7 @@
     <Compile Include="ControllersWebAPI\SettingsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -233,6 +234,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\another_play_button.svg" />
+    <Content Include="Content\Images\example\1.png" />
+    <Content Include="Content\Images\example\1.svg" />
+    <Content Include="Content\Images\example\2.jpg" />
+    <Content Include="Content\Images\example\2.svg" />
+    <Content Include="Content\Images\example\3.jpg" />
+    <Content Include="Content\Images\example\3.svg" />
+    <Content Include="Content\Images\example\4.jpg" />
+    <Content Include="Content\Images\example\4.svg" />
+    <Content Include="Content\Images\example\5.jpg" />
+    <Content Include="Content\Images\example\5.svg" />
+    <Content Include="Content\Images\example\mov.svg" />
+    <Content Include="Content\Images\example\top-avt.svg" />
+    <Content Include="Content\Images\logo.svg" />
+    <Content Include="Content\Images\play_button.svg" />
+    <Content Include="Content\Images\search-icon.svg" />
+    <Content Include="Content\Images\UnderConstruction.png" />
     <Content Include="Content\Scripts\Controllers\Account\Register.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -251,13 +269,23 @@
     <Content Include="Content\Images\Users\defaultMaleImg.png" />
     <Content Include="Content\Images\WebUI\circled-chevron-left.png" />
     <Content Include="Content\Images\WebUI\circled-chevron-right.png" />
+    <Content Include="Content\Scripts\Controllers\Home\Index.js" />
+    <Content Include="Content\Scripts\Helpers\RegisterValidation.js" />
     <Content Include="Content\Scripts\Helpers\TheMovieDbHelper.js" />
+    <Content Include="Content\Slick\ajax-loader.gif" />
+    <Content Include="Content\Slick\slick-theme.css" />
+    <Content Include="Content\Slick\slick.css" />
+    <Content Include="Content\Slick\slick.js" />
+    <Content Include="Content\Slick\slick.min.js" />
+    <Content Include="Content\Styles\DarkTheme.css" />
     <Content Include="Content\Styles\fontAwesome\css\font-awesome.css" />
     <Content Include="Content\Styles\fontAwesome\css\font-awesome.min.css" />
     <Content Include="Content\Styles\fontAwesome\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Styles\fontAwesome\HELP-US-OUT.txt" />
+    <Content Include="Content\Styles\LightTheme.css" />
     <Content Include="Content\Styles\login.css" />
     <Content Include="Content\Styles\main.css" />
+    <Content Include="Content\Styles\normalize.min.css" />
     <Content Include="Content\Styles\reset.css" />
     <Content Include="Content\Styles\social-buttons\images\a.png" />
     <Content Include="Content\Styles\social-buttons\images\b.png" />
@@ -354,6 +382,13 @@
     <Content Include="Content\Styles\fontAwesome\scss\_stacked.scss" />
     <Content Include="Content\Styles\fontAwesome\scss\_variables.scss" />
     <Content Include="Content\Styles\social-buttons\images\Thumbs.db" />
+    <Content Include="Content\Styles\fonts\NunitoSans-Regular.ttf" />
+    <Content Include="Content\Styles\fonts\STRATUMNO2-MEDIUM.OTF" />
+    <Content Include="Content\Slick\config.rb" />
+    <Content Include="Content\Slick\slick-theme.less" />
+    <Content Include="Content\Slick\slick-theme.scss" />
+    <Content Include="Content\Slick\slick.less" />
+    <Content Include="Content\Slick\slick.scss" />
     <None Include="Properties\PublishProfiles\lc.proger.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -381,7 +416,9 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -409,11 +446,15 @@
     <Content Include="Views\Account\EditAccount.cshtml" />
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
+    <Content Include="Views\Home\UnderConstruction.cshtml" />
+    <Content Include="Views\Shared\GetTheme.cshtml" />
+    <Content Include="Views\Movie\Index.cshtml" />
+    <Content Include="Views\Account\WelcomeVerificateEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Common\Images\" />
-    <Folder Include="Content\Scripts\Controllers\Home\" />
+    <Folder Include="Content\Slick\fonts\" />
     <Folder Include="Content\Styles\images\" />
     <Folder Include="ModelsWebAPI\" />
     <Folder Include="Scripts\main\" />

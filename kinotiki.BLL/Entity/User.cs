@@ -24,5 +24,11 @@ namespace kinotiki.BLL.Entity
         public string imageMimeType { get; set; }
 
         public DateTime Birthday { get; set; }
+
+        public bool isDarkTheme { get; set; }
+
+        public bool isEmailVerificated { get; set; }
+
+        public string verificationKey { get; set; }
     }
 }

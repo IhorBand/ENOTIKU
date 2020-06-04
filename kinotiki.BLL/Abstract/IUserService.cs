@@ -22,5 +22,6 @@ namespace kinotiki.BLL.Abstract
         User Find(string login);
         User Find(string login, string password);
         User FindByMail(string email);
+        User FindByVerificationKey(string key);
     }
 }

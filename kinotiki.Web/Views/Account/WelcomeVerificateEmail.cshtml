@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+@section headContent {
+    @Styles.Render("~/Content/Styles/login")
+    @Scripts.Render("~/budles/scripts/registerValidation")
+}
+
+div class="container-fluid main-content">
+<div class="d-flex justify-content-center align-items-center h-100">
+    <div class="modal-dialog text-center login-main-section">
+        <div class="col-sm-12 main-section">
+            <div class="modal-content">
+                <div class="col-12" style="margin-top: 10px; margin-bottom: 10px;">
+                    <h3 style="color: white;">Registration</h3>
+                    <h4 style="color: white;">Please Confirm Your Email Address.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

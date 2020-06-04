@@ -1,0 +1,328 @@
+        @font-face {
+            font-family: "StratumNo2"; 
+            src:url('fonts/STRATUMNO2-MEDIUM.otf');
+        } 
+
+        @font-face {
+            font-family: "NunitoSans";
+            src:url('fonts/NunitoSans-Regular.ttf');
+        }
+
+        body{
+            font-family: "StratumNo2", Arial, Helvetica, sans-serif; 
+            background-color: #363636;
+        }
+
+        img.exp{
+            width: 100%;
+        }   
+
+        svg path{
+            fill:#ffd700
+        }
+
+/*Header*/
+.logo h1{
+    font-size: 55px;
+    color: #fff;
+}
+
+.logo span{
+    color: #fff;
+    font-family: "NunitoSans", Arial, Helvetica, sans-serif;
+    font-size: 19px;
+}
+
+/*Search*/
+.search{
+    max-width: 1050px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #fff;
+    border: 1px solid #707070;
+    font-family: "NunitoSans", Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    padding: 30px;
+}
+/*Search*/
+
+/*Buttons*/
+input.btn.btn-dark {
+    background-color: #f6f6f6 !important;
+    color: black !important;
+}
+
+a.button{
+    width: 130px;
+    border-radius: 25px;
+    font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+    text-align: center;
+    
+    text-decoration: none;
+}
+
+a.button-black{
+    background-color: #272727;
+    border: 1px solid #272727;
+    font-size: 27px;
+    color: #ffffff;
+}
+
+a.button-black:hover{
+    background-color: #272727;
+    border: 1px solid #ffd700;
+    color: #ffd700;
+}
+
+a.button-yellow{
+    background-color: #ffd700;
+    border: 1px solid #707070;
+    font-size: 27px;
+    color: #000000;
+}
+
+a.button-yellow:hover{
+    background-color: #ffd700;
+    border: 1px solid #707070;
+    color: #fff;
+}
+/*Buttons*/
+
+.title-box{
+    min-height: 160px; 
+    background-color: #272727;
+}
+.menu-box{ 
+    background-color: #363636;
+}
+.pages-link{
+    font-size: 34px;
+    color: #ffffff;
+    font-family: "StratumNo2", Arial, Helvetica, sans-serif; 
+    font-weight: 500;
+}
+.pages-link:hover{
+    text-decoration: underline;
+    color: #ffffff;
+}
+/*Header*/
+
+
+
+        /*Content*/
+        .content hr {
+            background-color: white;
+        }
+
+        .content span{
+            font-size: 44px;
+            color: #ffffff;
+            font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+        }
+
+        .content .view-link{
+            font-size: 26px;
+            color: #ffffff;
+            font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+        }
+
+        .content .view-link:hover{
+            color: #ffd700;
+            text-decoration: #ffd700 underline;
+        }
+
+        .content .line{
+            border:none; 
+            height:2px; 
+            background-color:gray
+        }
+        /*Content*/
+
+        /*Movie Section*/
+        @media(min-width:992px){
+            .now-section{
+                max-width: 24%;
+            }
+        }
+
+        a.movie-box,
+        a.movie-now-box{
+            text-decoration: none;
+        }
+
+        .movie-now-img{
+            width: 100%;
+        }
+
+        a.movie-now-box:hover .movie-now-img{
+            background: rgb(80,80,80);
+            background: linear-gradient(0deg, rgba(255,215,0,1) 0%, rgba(0,0,0,0) 100%);
+        }
+
+        a.movie-box:hover .movie-img{
+            background-color: gray;
+            opacity: 1;
+            
+        }
+
+        .movie-name,
+        .movie-now-name{
+            font-size: 39px;
+            text-align: center;
+            font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+        }
+        
+        .movie-rating,
+        .movie-now-rating{
+            font-size: 33px;
+            color: #ffd700;
+            font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+        }
+        .movie-rating{
+            opacity: 0;
+        } 
+
+        a.movie-box:hover .movie-rating{
+            opacity: 1;
+        }
+
+        .movie-now-play{
+            opacity: 0;
+        }
+
+        .movie-now-box:hover .movie-now-play{
+            opacity: 1;
+        }
+
+        .movie-now-type{
+            font-size: 27px;
+            color: gray;
+            font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+        }
+        /*Movie Section*/
+
+        /*Top view*/
+        .top-section{
+            background-color: #000;
+        }
+
+        .top-section .top-title{
+            font-size: 44px;
+            color: #ffd700;
+            font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+        }
+
+        .top-number{
+            font-size: 26px;
+            color: #000;
+            font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+            background-color: #fff;
+            border-radius: 20px;
+            text-align: center;
+            height: 38px;
+            width: 38px;
+        }
+
+        .top-section .top-movie-name{
+            font-size: 24px;
+            color: #ffd700;
+            font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+        }
+
+        .number-views{
+            font-size: 21px;
+            color: #fff;
+            font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+        }
+
+        /*Top view*/
+
+        /*Trailers*/
+        .container-trailers {
+            display: flex;
+            margin-top: 50px;
+        }
+
+        .item {
+            position: relative;
+            display: block;
+            flex: 1 1 0px;
+            transition: transform 500ms;
+        }
+
+        .container-trailers:focus-within .item,
+        .container-trailers:hover .item {
+            transform: translateX(-25%);
+        }
+
+        .item:focus ~ .item,
+        .item:hover ~ .item {
+            transform: translateX(25%);
+        }
+
+        .container-trailers .item:focus,
+        .container-trailers .item:hover {
+            transform: scale(1.5);
+            z-index: 1;
+        }
+
+        .item img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .fancy{
+            position:relative;
+        }
+        .play-btn{
+
+            position:absolute;
+            left: calc(50% - 31px);
+            top:calc(50% - 31px);
+            width:62px;
+            height: 62px;
+            -webkit-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+        }
+        .fancy:hover .play-btn{
+            width:80px;
+            left: calc(50% - 40px);
+            top: calc(50% - 40px);
+            height:80px;
+        }
+        /*Trailers*/
+
+        .trailer-container {
+            margin-bottom: 40px;
+        }
+
+        .trailer {
+            max-width: 500px;
+        }
+
+/*Footer*/
+footer{
+    background-color: #000000;
+}
+
+footer span{
+    font-size: 44px;
+    color: #ffffff;
+    font-family: "StratumNo2", Arial, Helvetica, sans-serif;
+}
+
+footer .contact a,
+footer address,
+footer .social-networs a,
+footer .copyright{
+    color: #fff;
+    font-size: 21px;
+    font-family: "NunitoSans", Arial, Helvetica, sans-serif;
+}
+
+footer .contact a:hover,
+footer .social-networs a:hover{
+    color: #ffd700;
+    text-decoration: #ffd700 underline;
+}
+/*Footer*/

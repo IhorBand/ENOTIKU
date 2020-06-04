@@ -1,0 +1,8 @@
+﻿@model bool
+
+@if(Model)
+{
+    @Styles.Render("~/Content/css/DarkTheme");
+} else {
+    @Styles.Render("~/Content/css/LightTheme");
+}

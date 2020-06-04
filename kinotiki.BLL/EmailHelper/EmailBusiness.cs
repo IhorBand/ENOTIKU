@@ -20,7 +20,7 @@ namespace kinotiki.BLL.EmailHelper
         //public string sub { get; set; }
         //public string body { get; set; }
 
-        EmailBusiness()
+        public EmailBusiness()
         {
             var gs = context.GlobalSettings.FirstOrDefault();
             smtp = new SmtpClient
@@ -33,7 +33,7 @@ namespace kinotiki.BLL.EmailHelper
             gsemail = gs.smtpMail;
         }
 
-        EmailBusiness(string host, int port, string userName,string password, bool enableSsl = true)
+        public EmailBusiness(string host, int port, string userName,string password, bool enableSsl = true)
         {
             smtp = new SmtpClient
             {

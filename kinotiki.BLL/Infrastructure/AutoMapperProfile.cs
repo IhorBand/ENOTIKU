@@ -44,7 +44,10 @@ namespace kinotiki.BLL.Infrastructure
                             imageMimeType = m.imageMimeType,
                             login = m.login,
                             password = m.password,
-                            Birthday = m.Birthday
+                            Birthday = m.Birthday,
+                            isDarkTheme = m.isDarkTheme,
+                            isEmailVerificated = m.isEmailVerificated,
+                            verificationKey = m.verificationKey
                         }
                     )
                 )

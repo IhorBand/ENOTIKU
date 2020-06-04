@@ -15,6 +15,7 @@ function TheMovieDbHelper(initialValues)
     self.apiKey = null;
     self.apiBaseUrl = "https://api.themoviedb.org/3/";
     self.defaultLanguage = "en-US";
+    self.posterUrl = "https://image.tmdb.org/t/p/original";
 
     // Load Properties From Params
     for(var key in initialValues) {
@@ -62,7 +63,7 @@ function TheMovieDbHelper(initialValues)
 
     this.ExecCustomMethod = function (apiUrl, type, callback, errorCallback) {
         $.ajax(
-            self.GetAPIUrl("trending/all/week"),
+            apiUrl,
             {
                 type: type,
                 async: true,
@@ -78,6 +79,26 @@ function TheMovieDbHelper(initialValues)
                 }
             }
         );
+    }
+
+    this.SyncExecCustomMethod = function (apiUrl, type, errorCallback) {
+        var ret = null;
+        $.ajax(
+            apiUrl,
+            {
+                type: type,
+                async: false,
+                success: function (data) {
+                    ret = data;
+                },
+                error: function (error) {
+                    console.log("error while getting trending movies");
+                    if (errorCallback != null)
+                        errorCallback(errorCallback);
+                }
+            }
+        );
+        return ret;
     }
     
     this.GetTrendingAllWeek = function (callback, errorCallback) {
@@ -109,20 +130,38 @@ function TheMovieDbHelper(initialValues)
         if (language == null) {
             language = self.defaultLanguage;
         }
-        self.ExecCustomMethod(self.GetAPIUrl("/movie/now_playing?language=" + language), 'GET', callback, errorCallback);
+        self.ExecCustomMethod(self.GetAPIUrl("movie/now_playing?language=" + language), 'GET', callback, errorCallback);
     }
 
     this.GetMovieVideos = function (movieId, language, callback, errorCallback) {
         if (language == null) {
             language = self.defaultLanguage;
         }
-        self.ExecCustomMethod(self.GetAPIUrl("/movie/" + movieId + "/videos?language=" + language), 'GET', callback, errorCallback);
+        self.ExecCustomMethod(self.GetAPIUrl("movie/" + movieId + "/videos?language=" + language), 'GET', callback, errorCallback);
     }
 
     this.GetTopRatedMovies = function (language, callback, errorCallback) {
         if (language == null) {
             language = self.defaultLanguage;
         }
-        self.ExecCustomMethod(self.GetAPIUrl("/movie/top_rated?language=" + language), 'GET', callback, errorCallback);
+        self.ExecCustomMethod(self.GetAPIUrl("movie/top_rated?language=" + language), 'GET', callback, errorCallback);
+    }
+
+    this.GetGenreById = function (genreId, errorCallback) {
+        let genres = self.SyncExecCustomMethod(self.GetAPIUrl("genre/movie/list"), 'GET', errorCallback);
+        if (genres != null && genres.genres != null && genres.genres.length != null && genres.genres.length > 0) {
+            for (let i = 0; i < genres.genres.length; i++) {
+                if(genres.genres[i].id == genreId)
+                    return genres.genres[i];
+            }
+        }
+        return null;
+    }
+
+    this.GetPopularMovies = function (language, callback, errorCallback) {
+        if (language == null) {
+            language = self.defaultLanguage;
+        }
+        self.ExecCustomMethod(self.GetAPIUrl("movie/popular?language=" + language), 'GET', callback, errorCallback);
     }
 }

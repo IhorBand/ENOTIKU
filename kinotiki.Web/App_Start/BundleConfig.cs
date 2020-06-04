@@ -30,6 +30,9 @@ namespace kinotiki.Web
                         "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/budles/scripts/moviedbhelper").Include("~/Content/Scripts/Helpers/TheMovieDbHelper.js"));
+            bundles.Add(new ScriptBundle("~/budles/scripts/registerValidation").Include("~/Content/Scripts/Helpers/RegisterValidation.js"));
+            bundles.Add(new ScriptBundle("~/budles/scripts/Home/Index").Include("~/Content/Scripts/Controllers/Home/Index.js"));
+
 
             // Styles
 
@@ -38,6 +41,12 @@ namespace kinotiki.Web
                       "~/Content/styles/fontAwesome/css/font-awesome.min.css",
                       "~/Content/styles/social-buttons/social-buttons.css",
                       "~/Content/styles/reset.css"));
+            
+            bundles.Add(new StyleBundle("~/Content/css/DarkTheme").Include("~/Content/Styles/DarkTheme.css"));
+            bundles.Add(new StyleBundle("~/Content/css/LightTheme").Include("~/Content/Styles/LightTheme.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css/slick").Include("~/Content/Slick/slick.css", 
+                "~/Content/Slick/slick-theme.css"));
 
             bundles.Add(new StyleBundle("~/Content/css/main").Include("~/Content/styles/main.css"));
 

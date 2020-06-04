@@ -1,7 +1,7 @@
 ﻿@using kinotiki.Web.Models.Account;
 @model LoginUser
 
-@using (Html.BeginForm("Login","Account",FormMethod.Post, new { @class = "log-in-form-box text-for-black-background" }))
+@*@using (Html.BeginForm("Login","Account",FormMethod.Post, new { @class = "log-in-form-box text-for-black-background" }))
 {
     @Html.AntiForgeryToken()
     <h4 class="text-center">Log-in</h4>
@@ -24,4 +24,7 @@
         <input type="submit" value="Log-in" class="btn btn-primary btn-sm" />
         <a class="btn btn-primary btn-sm" href="@Url.Action("Register","Account")">Register</a>
     </div>
-}
+}*@
+
+<a href="#" class="button button-black text-uppercase mx-2">Log in</a>
+<a href="#" class="button button-yellow text-uppercase mx-2">Sign up</a>

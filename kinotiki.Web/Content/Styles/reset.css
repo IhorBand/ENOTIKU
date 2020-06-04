@@ -18,3 +18,16 @@ a:hover {
 	text-decoration: none;
 	color: #a8a8a8;
 }
+
+.hidden {
+    position: absolute;
+    left: -999999px;
+}
+
+.item-prototype {
+    display: none !important;
+}
+
+.full-width {
+    width: 100%;
+}

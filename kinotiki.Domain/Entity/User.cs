@@ -30,5 +30,11 @@ namespace kinotiki.Domain.Entity
         public byte[] imageData { get; set; }
         [HiddenInput(DisplayValue = false)]
         public string imageMimeType { get; set; }        
+
+        public bool isDarkTheme { get; set; }
+
+        public bool isEmailVerificated { get; set; }
+
+        public string verificationKey { get; set; }
     }
 }

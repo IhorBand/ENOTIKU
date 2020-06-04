@@ -49,6 +49,13 @@ namespace kinotiki.Domain.Concrete
             return userModel;
         }
 
+        public User FindByVerificationKey(string key)
+        {
+            var user = context.Users.FirstOrDefault(u => !u.isEmailVerificated && u.verificationKey == key);
+            var userModel = mapper.Map<User>(user);
+            return userModel;
+        }
+
         public void Create(User userModel)
         {
             var user = mapper.Map<Domain.Entity.User>(userModel);

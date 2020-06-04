@@ -7,6 +7,7 @@
 
 @section headContent {
     @Styles.Render("~/Content/Styles/login")
+    @Scripts.Render("~/budles/scripts/registerValidation")
 }
 
 <style>
@@ -42,6 +43,49 @@
 
 </style>
 
+
+<script>
+
+    function Validate(validateRet, event) {
+        let msgContainer = jQuery('.js--error-msg');
+        let msg = msgContainer.find('span');
+
+        if (validateRet != null && !validateRet.Ok) {
+            //event.preventDefault();
+            msgContainer.show();
+            msg.text(validateRet.message);
+            return false;
+        }
+        return true;
+    }
+
+    function ClickedBtn(el) {
+        let event = null;
+        let login = jQuery('.js--login-value').val();
+        let pass = jQuery('.js--pass-value').val();
+        let email = jQuery('.js--email-value').val();
+        let birthday = jQuery('.js--birthday-value').val();
+
+        let validateLogin = isValidLogin(login);
+        if (!Validate(validateLogin, event))
+            return false;
+
+        let validatePass = isValidPass(login);
+        if (!Validate(validatePass, event))
+            return false;
+
+        let validateEmail = isEmail(email);
+        if (!Validate(validateEmail, event))
+            return false;
+
+        let validateBirthday = isValidBirthday(birthday);
+        if (!Validate(validateBirthday, event))
+            return false;
+        return true;
+    }
+
+</script>
+
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -54,25 +98,28 @@
                         <div class="col-12" style="margin-top: 10px; margin-bottom: 10px;">
                             <h3>Registration</h3>
                             <h4>Fill in the fields</h4>
+                            <div style="text-align:center; display:none;" class="js--error-msg">
+                                <span style="color: red;"></span>
+                            </div>
                             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
-                            @Html.EditorFor(model => model.login, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Login" } })
+                            @Html.EditorFor(model => model.login, new { htmlAttributes = new { @class = "form-control js--login-value", placeholder = "Enter Login" } })
                             @Html.ValidationMessageFor(model => model.login, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group">
-                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Password" } })
+                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control js--pass-value", placeholder = "Enter Password" } })
                             @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group">
-                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter Email" } })
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control js--email-value", placeholder = "Enter Email" } })
                             @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="form-group">
-                            @Html.EditorFor(model => model.BirthdayDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                            @Html.EditorFor(model => model.BirthdayDate, new { htmlAttributes = new { @class = "form-control js--birthday-value", @type = "date" } })
                             @Html.ValidationMessageFor(model => model.BirthdayDate, "", new { @class = "text-danger" })
                         </div>
 
@@ -81,7 +128,6 @@
                                 Gender:
                             </div>
                             <div class="">
-                                
                                 @Html.RadioButtonFor(m => m.sex, (int)kinotiki.BLL.Entity.Enums.GenderType.Male) Male
                                 @Html.RadioButtonFor(m => m.sex, (int)kinotiki.BLL.Entity.Enums.GenderType.Female) Female
                                 @Html.RadioButtonFor(m => m.sex, (int)kinotiki.BLL.Entity.Enums.GenderType.Alien, new { @checked = true }) Alien
@@ -97,7 +143,7 @@
 
                         <div class="form-group">
                             <div class="col-sm-offset-2">
-                                <input type="submit" value="Register" class="register-submit" id="register-submit-btn" />
+                                <input type="submit" value="Register" onclick="return ClickedBtn(this);" class="register-submit" id="register-submit-btn" />
                             </div>
                         </div>
                     </div>
